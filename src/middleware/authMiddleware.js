@@ -5,7 +5,6 @@ module.exports = (req, res, next) => {
     const authHeader = req.headers.authorization;
 
     console.log("AUTH HEADER:", authHeader);
-    console.log("JWT_SECRET IN MIDDLEWARE:", process.env.JWT_SECRET);
 
     if (!authHeader) {
       return res.status(401).json({ message: "No Authorization header" });
